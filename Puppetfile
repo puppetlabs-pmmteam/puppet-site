@@ -41,8 +41,7 @@ mod 'dwerder/graphite', '5.3.3'
 mod 'dalen/puppetdbquery', '1.5.3'
 mod 'hunner/wordpress', '1.0.0'
 mod 'seteam/splunk', '3.0.1'
-mod 'ldap',
-  :git => 'git@github.com:mrzarquon/puppet-ldap.git'
+mod 'abstractit/sudo', '1.2.1'
 
 
 # In house modules
