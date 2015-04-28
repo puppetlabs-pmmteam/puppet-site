@@ -1,0 +1,12 @@
+---
+:backends:
+  - yaml
+
+:hierarchy:
+  - "clientcert/%{clientcert}"
+  - "environment/%{environment}"
+  - "datacenter/%{datacenter}"
+  - "common"
+
+:yaml:
+  :datadir: "/etc/puppetlabs/puppet/environments/%{environment}/data"
