@@ -26,7 +26,7 @@ mod 'puppetlabs/ntp', '3.2.1'
 mod 'puppetlabs/concat', '1.1.2'
 mod 'puppetlabs/firewall', '1.2.0'
 mod 'puppetlabs/inifile', '1.1.4'
-mod 'puppetlabs/mysql', '2.3.1'
+mod 'puppetlabs/mysql', '3.3.0'
 
 # Community Modules
 mod 'stahnma/epel', '1.0.0'
@@ -42,6 +42,7 @@ mod 'dalen/puppetdbquery', '1.5.3'
 mod 'hunner/wordpress', '1.0.0'
 mod 'seteam/splunk', '3.0.1'
 mod 'abstractit/sudo', '1.2.1'
+mod 'pulp/pulp', '1.0.0'
 
 
 # In house modules
