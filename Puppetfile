@@ -47,6 +47,6 @@ mod 'pulp/pulp', '1.0.0'
 
 # In house modules
 mod 'profile',
-  :git => 'https://github.com/puppetlabs-pmmteam/pmm-profiles.git'
+  :git => '/var/lib/peadmin/profile'
 mod 'role',
-  :git => 'https://github.com/puppetlabs-pmmteam/pmm-roles.git'
+  :git => '/var/lib/peadmin/role'
