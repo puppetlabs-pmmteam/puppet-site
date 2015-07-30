@@ -9,4 +9,4 @@
   - "common"
 
 :yaml:
-  :datadir: "/etc/puppetlabs/puppet/environments/%{environment}/data"
+  :datadir: "/etc/puppetlabs/code/environments/%{environment}/data"
