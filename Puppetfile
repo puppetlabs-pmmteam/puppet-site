@@ -27,6 +27,7 @@ mod 'puppetlabs/concat', '1.1.2'
 mod 'puppetlabs/firewall', '1.2.0'
 mod 'puppetlabs/inifile', '1.1.4'
 mod 'puppetlabs/mysql', '3.3.0'
+mod 'mayflower/php', '3.4.1'
 
 # Community Modules
 mod 'stahnma/epel', '1.0.0'
