@@ -9,3 +9,5 @@ profile::network::base::interfaces::interfaces:
   'Ethernet1/3':
     ipv4_address: '10.0.0.2'
     ipv4_netmask_length: 24
+profile::network::bgp::neighbor: '10.0.0.1'
+profile::network::bgp::clusterid: '192.55.55.5'
