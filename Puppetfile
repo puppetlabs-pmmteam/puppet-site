@@ -29,6 +29,7 @@ mod 'puppetlabs/inifile', '1.1.4'
 mod 'puppetlabs/mysql', '3.3.0'
 mod 'mayflower/php', '3.4.1'
 mod 'puppetlabs/ciscopuppet', '1.0.0'
+mod 'puppetlabs/satellite_pe_tools', '1.0.0'
 
 # Community Modules
 mod 'stahnma/epel', '1.0.0'
