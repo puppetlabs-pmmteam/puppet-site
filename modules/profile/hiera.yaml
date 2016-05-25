@@ -1,0 +1,12 @@
+---
+:backends:
+  - yaml
+
+:hierarchy:
+  - "clientcert/%{clientcert}"
+  - "environment/%{environment}"
+  - "datacenter/%{datacenter}"
+  - "common"
+
+:yaml:
+  :datadir: "/vagrant/data"

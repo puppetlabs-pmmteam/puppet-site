@@ -1,0 +1,20 @@
+Spine
+conf
+no router bgp 55
+no feature bfd
+no snmp-server community setcom
+no snmp-server user v3test
+default interface ethernet1/1
+default interface ethernet1/2
+default interface ethernet1/3
+copy run start
+
+
+Leaf
+conf
+no snmp-server community setcom
+no snmp-server user v3test
+no router ospf Sample
+default interface ethernet1/1
+default interface ethernet1/2
+copy run start

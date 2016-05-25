@@ -1,0 +1,9 @@
+---
+splunk::params::version:  "6.0"
+splunk::params::build:    "182037"
+splunk::params::src_root: "http://master.inf.puppetlabs.demo/demo_offline_splunk"
+mysql::server::remove_default_accounts: true
+mysql::server::override_options:
+  'mysqld':
+    'bind-address': '0.0.0.0'
+    'test': '0.0.0.0'

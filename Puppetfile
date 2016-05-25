@@ -47,10 +47,3 @@ mod 'hunner/wordpress', '1.0.0'
 mod 'seteam/splunk', '3.0.1'
 mod 'abstractit/sudo', '1.2.1'
 mod 'pulp/pulp', '1.0.0'
-
-
-# In house modules
-mod 'profile',
-  :git => '/var/lib/peadmin/profile'
-mod 'role',
-  :git => '/var/lib/peadmin/role'

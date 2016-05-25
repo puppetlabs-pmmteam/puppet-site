@@ -1,0 +1,13 @@
+{
+  "name": "pmm-role",
+  "version": "0.0.1",
+  "author": "Puppet Labs Demo Roles",
+  "summary": "Puppet Labs Demo Role Module",
+  "license": "Apache 2.0",
+  "source": "https://github.com/puppetlabs-pmmteam/pmm-role.git",
+  "project_page": "https://github.com/puppetlabs-pmmteam/pmm-role",
+  "issues_url": "https://github.com/puppetlabs-pmmteam/pmm-role/issues",
+  "description": "Top-level role-aggregator module to defining demo specific roles",
+  "dependencies": [
+  ]
+}
