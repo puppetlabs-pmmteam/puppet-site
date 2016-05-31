@@ -16,7 +16,9 @@ node {
     git branch: 'dev', credentialsId: 'github-ccaum-userpass', url: 'https://github.com/puppetlabs-pmmteam/puppet-site'
 
     stage 'Lint and unit tests'
-    sh '/usr/local/bin/rspec spec/'
+    withEnv(['PATH=/usr/local/bin:$PATH']) {
+      sh '/usr/local/bin/rspec spec/'
+    }
 
     stage 'Deploy to dev'
     puppetCode environment: 'dev', credentialsId: 'pe-access-token'
