@@ -11,6 +11,8 @@ def promote(Map parameters = [:]) {
   merge(from, to)
 
   withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'github-ccaum-userpass', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
+    echo 'USER: $GIT_USERNAME'
+    echo 'PASS: $GIT_PASSWORD'
     sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@' + repo + ' ' + to)
   }
 }
