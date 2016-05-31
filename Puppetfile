@@ -26,7 +26,7 @@ mod 'puppetlabs/ntp', '3.2.1'
 mod 'puppetlabs/concat', '1.1.2'
 mod 'puppetlabs/firewall', '1.7.1'
 mod 'puppetlabs/inifile', '1.1.4'
-mod 'puppetlabs/mysql', lookup('mysql-module-version')
+mod 'puppetlabs/mysql', hiera('mysql-module-version')
 mod 'mayflower/php', '3.4.1'
 mod 'puppetlabs/ciscopuppet', '1.0.0'
 # mod 'puppetlabs/satellite_pe_tools', '1.0.0'
