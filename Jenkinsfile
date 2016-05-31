@@ -5,7 +5,7 @@ def merge(from, to) {
 
 def promote(Map parameters = [:]) {
   String from = parameters.from
-  String to = parameter.to
+  String to = parameters.to
 
   merge(from, to)
 
