@@ -50,3 +50,5 @@ if $::osfamily == 'windows' {
 #     class { 'my_class': }
 #   hiera_include('classes')
 # }
+
+node default { }
