@@ -13,7 +13,7 @@ def promote(Map parameters = [:]) {
 }
 
 node {
-    git branch: 'dev', credentialsId: 'github-ccaum-key', url: 'git@github.com:puppetlabs-pmmteam/puppet-site'
+    git branch: 'dev', credentialsId: 'github-ccaum-userpass', url: 'https://github.com/puppetlabs-pmmteam/puppet-site'
 
     stage 'Lint and unit tests'
     sh 'rspec spec/'
