@@ -6,10 +6,13 @@ def merge(from, to) {
 def promote(Map parameters = [:]) {
   String from = parameters.from
   String to = parameters.to
+  String repo = parameters.repo
 
   merge(from, to)
 
-  sh('git push origin ' + to)
+  withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'github-ccaum-userpass', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
+    sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@' + repo)
+  }
 }
 
 node {
@@ -26,7 +29,7 @@ node {
 
     stage 'Promote to staging'
     input "Ready to deploy to staging?"
-    promote from: 'dev', to: 'staging'
+    promote from: 'dev', to: 'staging', repo: 'github.com/puppetlabs-pmmteam/puppet-site'
     
     stage 'Deploy to staging'
     puppetCode environment: 'staging', credentialsId: 'pe-access-token'
@@ -36,7 +39,7 @@ node {
 
     stage 'Promote to production'
     input 'Ready to deploy to production?'
-    promote from: 'staging', to: 'production'
+    promote from: 'staging', to: 'production', repo: 'github.com/puppetlabs-pmmteam/puppet-site'
 
     stage 'Deploy to production'
     puppetCode environment: 'production', credentialsId: 'pe-access-token'
