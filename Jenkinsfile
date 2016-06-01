@@ -48,7 +48,7 @@ node {
     stage 'Promote to production'
     promote from: 'staging', to: 'production', repo: 'github.com/puppetlabs-pmmteam/puppet-site'
 
-    stage 'Noop roduction run'
+    stage 'Noop production run'
     puppetJob  environment: 'production', noop: true, credentialsId: 'pe-access-token'
 
     stage 'Deploy to production'
