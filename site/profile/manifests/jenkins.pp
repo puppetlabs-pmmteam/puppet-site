@@ -1,6 +1,8 @@
 class profile::jenkins {
   
-  class { 'jenkins': }
+  class { 'jenkins':
+    configure_firewall => true,
+  }
 
   jenkins::job { "control-repo":
     ensure  => present,
