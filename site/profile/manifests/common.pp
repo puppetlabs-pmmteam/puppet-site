@@ -5,6 +5,7 @@
 # and shouldn't be here.
 #
 class profile::common {
+  include profile::pe_env
 
   case $::osfamily {
     default: { } # for OS's not listed, do nothing
