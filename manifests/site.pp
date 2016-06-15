@@ -44,11 +44,28 @@ if $::osfamily == 'windows' {
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
-# node default {
-#   This is where you can declare classes for all nodes.
-#   Example:
-#     class { 'my_class': }
-#   hiera_include('classes')
-# }
-
 node default { }
+
+
+# APPLICATIONS
+# Site application instances
+
+site {
+  rgbank { 'staging':
+    web_count => 2,
+    nodes     => {
+      Node['appserver01.vm']  => [ Rgbank::Web['staging-0'] ],
+      Node['appserver02.vm']  => [ Rgbank::Web['staging-1'] ],
+      Node['loadbalancer.vm'] => [ Rgbank::Load['staging'] ],
+      Node['database.vm']     => [ Rgbank::Db['staging'] ],
+    },
+  }
+
+  rgbank { 'dev':
+    nodes               => {
+      Node['rgbankdev.vm'] => [ Rgbank::Web['dev-0'],
+                             Rgbank::Load['dev'],
+                             Rgbank::Db['dev'] ],
+    },
+  }
+}
