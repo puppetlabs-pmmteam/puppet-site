@@ -13,8 +13,14 @@ class profile::common {
     }
   }
 
-  service { 'NetworkManager':
-    ensure => stopped,
-    enable => false,
+  if $::kernel == 'Linux' {
+    service { 'NetworkManager':
+      ensure => stopped,
+      enable => false,
+    }
+
+    package { 'wget':
+      ensure => installed,
+    }
   }
 }
