@@ -1,9 +1,0 @@
----
-applications:
-  rgbank:
-    dev:
-      nodes:
-        'Node[rgbankdev.vm]':
-          - 'Rgbank::Web[dev-0]'
-          - 'Rgbank::Load[dev]'
-          - 'Rgbank::Db[dev]'

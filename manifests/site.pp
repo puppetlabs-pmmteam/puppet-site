@@ -51,35 +51,17 @@ node default { }
 # Site application instances
 
 site {
-  case $environment {
-    'production': {
-      rgbank { 'production':
-        web_count => 3,
-        nodes     => {
-          Node['appserver01.vm']  => [ Rgbank::Web['staging-0'] ],
-          Node['appserver02.vm']  => [ Rgbank::Web['staging-1'] ],
-          Node['appserver03.vm']  => [ Rgbank::Web['staging-2'] ],
-          Node['loadbalancer.vm'] => [ Rgbank::Load['staging'] ],
-          Node['database.vm']     => [ Rgbank::Db['staging'] ],
-        },
-      }
-    }
-    'staging': {
-      rgbank { 'staging':
-        nodes     => {
-          Node['appserver01-staging.vm']  => [ Rgbank::Web['staging-0'] ],
-          Node['loadbalancer-staging.vm'] => [ Rgbank::Load['staging'] ],
-          Node['database-staging.vm']     => [ Rgbank::Db['staging'] ],
-        },
-      }
-    }
-    'dev': {
-      rgbank { 'dev':
-        nodes               => {
-          Node['rgbankdev.vm'] => [ Rgbank::Web['dev-0'],
-                                 Rgbank::Load['dev'],
-                                 Rgbank::Db['dev'] ],
-        },
+  $environment = inline_template('<%= scope.environment %>')
+  $envs = loadyaml("/etc/puppetlabs/code/environments/${environment}/applications.yaml")
+  $applications = $envs[$environment]
+
+  $applications.each |String $type, Hash $instances| {
+    $instances.each |String $title, Hash $params| {
+      # Because Puppet code expects typed parameters, not just strings representing
+      # types, an appropriately transformed version of the $params variable will be
+      # used. The resolve_resources() method comes from the tse/to_resource module.
+      Resource[$type] { $title:
+        * => $params.resolve_resources,
       }
     }
   }
