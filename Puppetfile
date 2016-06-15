@@ -31,7 +31,7 @@ mod 'mayflower/php', '3.4.1'
 mod 'puppetlabs/ruby', '0.5.0'
 mod 'puppetlabs/ciscopuppet', '1.0.0'
 # mod 'puppetlabs/satellite_pe_tools', '1.0.0'
-mod 'puppetlabs/haproxy', '1.3.0'
+mod 'puppetlabs/haproxy', '1.5.0'
 
 mod 'rgbank',
   :git => 'https://github.com/puppetlabs-pmmteam/puppet-rgbank.git'
