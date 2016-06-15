@@ -20,7 +20,6 @@ staging:
 production:
   rgbank:
     production:
-      web_count: 3
       nodes:
         'Node[appserver01.vm]':
           - 'Rgbank::Web[production-0]'
