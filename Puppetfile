@@ -32,8 +32,13 @@ mod 'puppetlabs/ruby', '0.5.0'
 mod 'puppetlabs/ciscopuppet', '1.0.0'
 # mod 'puppetlabs/satellite_pe_tools', '1.0.0'
 mod 'puppetlabs/haproxy', '1.3.0'
-mod 'puppetlabs-pmmteam/puppet-rgbank',
+
+mod 'puppetlabs-pmmteam/rgbank',
   :git => 'https://github.com/puppetlabs-pmmteam/puppet-rgbank.git'
+mod 'puppetlabs-pmmteam/database',
+  :git => 'https://github.com/puppetlabs-pmmteam/puppet-database.git'
+mod 'puppetlabs-pmmteam/http',
+  :git => 'https://github.com/puppetlabs-pmmteam/puppet-http.git'
 
 # Community Modules
 mod 'stahnma/epel', '1.0.0'
