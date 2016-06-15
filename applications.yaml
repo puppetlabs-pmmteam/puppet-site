@@ -14,7 +14,7 @@ staging:
         'Node[appserver01-staging.vm]':
           - 'Rgbank::Web[dev-0]'
         'Node[database-staging.vm]':
-          - 'Rgbank::Db[stagin]'
+          - 'Rgbank::Db[staging]'
         'Node[loadbalancer-staging.vm]':
           - 'Rgbank::Load[staging]'
 production:
