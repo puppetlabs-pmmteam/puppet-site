@@ -51,21 +51,32 @@ node default { }
 # Site application instances
 
 site {
-  rgbank { 'staging':
-    web_count => 2,
-    nodes     => {
-      Node['appserver01.vm']  => [ Rgbank::Web['staging-0'] ],
-      Node['appserver02.vm']  => [ Rgbank::Web['staging-1'] ],
-      Node['loadbalancer.vm'] => [ Rgbank::Load['staging'] ],
-      Node['database.vm']     => [ Rgbank::Db['staging'] ],
-    },
+  
+  $applications = lookup('applications')
+
+  $applications.each |String $type, Hash $instances| {
+    $instances.each |String $title, Hash $params| {
+      Resource[$type] { $title:
+        * => $params.resource_resources,
+      }
+    }
   }
 
-  rgbank { 'dev':
-    nodes               => {
-      Node['rgbankdev.vm'] => [ Rgbank::Web['dev-0'],
-                             Rgbank::Load['dev'],
-                             Rgbank::Db['dev'] ],
-    },
-  }
+  #rgbank { 'staging':
+  #  web_count => 2,
+  #  nodes     => {
+  #    Node['appserver01.vm']  => [ Rgbank::Web['staging-0'] ],
+  #    Node['appserver02.vm']  => [ Rgbank::Web['staging-1'] ],
+  #    Node['loadbalancer.vm'] => [ Rgbank::Load['staging'] ],
+  #    Node['database.vm']     => [ Rgbank::Db['staging'] ],
+  #  },
+  #}
+
+  #rgbank { 'dev':
+  #  nodes               => {
+  #    Node['rgbankdev.vm'] => [ Rgbank::Web['dev-0'],
+  #                           Rgbank::Load['dev'],
+  #                           Rgbank::Db['dev'] ],
+  #  },
+  #}
 }
