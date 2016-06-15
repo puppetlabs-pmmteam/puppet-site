@@ -33,11 +33,11 @@ mod 'puppetlabs/ciscopuppet', '1.0.0'
 # mod 'puppetlabs/satellite_pe_tools', '1.0.0'
 mod 'puppetlabs/haproxy', '1.3.0'
 
-mod 'puppetlabs-pmmteam/rgbank',
+mod 'rgbank',
   :git => 'https://github.com/puppetlabs-pmmteam/puppet-rgbank.git'
-mod 'puppetlabs-pmmteam/database',
+mod 'database',
   :git => 'https://github.com/puppetlabs-pmmteam/puppet-database.git'
-mod 'puppetlabs-pmmteam/http',
+mod 'http',
   :git => 'https://github.com/puppetlabs-pmmteam/puppet-http.git'
 
 # Community Modules
