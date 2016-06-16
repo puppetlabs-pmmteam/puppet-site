@@ -20,7 +20,7 @@ node {
 
     stage 'Lint and unit tests'
     withEnv(['PATH=/usr/local/bin:$PATH']) {
-      sh 'rspec spec/'
+      sh 'bundle exec rspec spec/'
     }
 
     stage 'Deploy to dev'
