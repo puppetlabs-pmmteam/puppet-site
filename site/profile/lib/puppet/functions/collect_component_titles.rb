@@ -7,10 +7,10 @@
 # @param component [Type] the component type to match
 Puppet::Functions.create_function(:collect_component_titles) do
   def collect_component_titles(nodes, component)
-    target = component.type_name
+    target = component.type_name.downcase
     nodes.map do |_, components|
       components = [components] unless components.kind_of?(Array)
-      components = components.select {|comp| comp.type == target}
+      components = components.select {|comp| comp.type.downcase == target}
       components.map {|comp| comp.title}
     end.flatten
   end
