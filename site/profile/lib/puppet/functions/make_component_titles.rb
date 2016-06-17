@@ -7,9 +7,9 @@ Puppet::Functions.create_function(:make_component_titles) do
     return_hash = parameters
 
     parameters['nodes'].each do |node, components|
-      components.each do |component|
+      components.each_with_index do |component|
         unless component.match /^[\w:]+\[.*\]$/
-          return_hash['nodes'][node][global_component_count] = "#{component}[#{name_prefix}-#{global_component_count}]"
+          return_hash['nodes'][node][index] = "#{component}[#{name_prefix}-#{global_component_count}]"
         end
 
         global_component_count += 1
