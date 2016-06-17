@@ -51,7 +51,7 @@ node default { }
 # Site application instances
 
 site {
-  $environment = inline_template('<%= scope.environment %>')
+  $environment = get_compiler_environment()
   $envs = loadyaml("/etc/puppetlabs/code/environments/${environment}/applications.yaml")
   $applications = $envs[$environment]
 
