@@ -1,26 +1,32 @@
 ---
 dev:
   rgbank:
-    dev:
-      ['Rgbank::Web','Rgbank::Db', 'Rgbank::Load']:
-        - 'rgbankdev.vm'
+    dev-0:
+      components:
+        ['Rgbank::Web','Rgbank::Db', 'Rgbank::Load']:
+          - rgbankdev.vm
 staging:
   rgbank:
-    staging:
-      'Rgbank::Web':
-        - 'appserver01-staging.vm'
-      'Rgbank::Db':
-        - 'database-staging.vm'
-      'Rgbank::Load':
-        - 'loadbalancer-staging.vm'
+    staging-0:
+      components:
+        Rgbank::Web:
+          - appserver01-staging.vm
+        Rgbank::Db:
+          - database-staging.vm
+        Rgbank::Load:
+          - loadbalancer-staging.vm
 production:
   rgbank:
-    production:
-      'Rgbank::Web':
-        - 'appserver01.vm'
-        - 'appserver02.vm'
-        - 'appserver03.vm'
-      'Rgbank::Db':
-        - 'database.vm'
-      'Rgbank::Load':
-        - 'loadbalancer.vm'
+    production-0:
+      parameters:
+        username: 'productionuser'
+        password: 'myawesomepassword'
+      components:
+        Rgbank::Web:
+          - appserver01.vm
+          - appserver02.vm
+          - appserver03.vm
+        Rgbank::Db:
+          - database.vm
+        Rgbank::Load:
+          - loadbalancer.vm
