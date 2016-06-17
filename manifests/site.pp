@@ -52,7 +52,6 @@ node default { }
 
 site {
   $environment = get_compiler_environment()
-  notify { "${environment}": }
   $envs = loadyaml("/etc/puppetlabs/code/environments/${environment}/applications.yaml")
   $applications = $envs[$environment]
 
