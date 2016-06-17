@@ -2,32 +2,25 @@
 dev:
   rgbank:
     dev:
-      nodes:
-        'Node[rgbankdev.vm]':
-          - 'Rgbank::Web'
-          - 'Rgbank::Load'
-          - 'Rgbank::Db'
+      ['Rgbank::Web','Rgbank::Db', 'Rgbank::Load']:
+        - 'rgbankdev.vm'
 staging:
   rgbank:
     staging:
-      nodes:
-        'Node[appserver01-staging.vm]':
-          - 'Rgbank::Web'
-        'Node[database-staging.vm]':
-          - 'Rgbank::Db'
-        'Node[loadbalancer-staging.vm]':
-          - 'Rgbank::Load'
+      'Rgbank::Web':
+        - 'appserver01-staging.vm'
+      'Rgbank::Db':
+        - 'database-staging.vm'
+      'Rgbank::Load':
+        - 'loadbalancer-staging.vm'
 production:
   rgbank:
     production:
-      nodes:
-        'Node[appserver01.vm]':
-          - 'Rgbank::Web'
-        'Node[appserver02.vm]':
-          - 'Rgbank::Web'
-        'Node[appserver03.vm]':
-          - 'Rgbank::Web'
-        'Node[database.vm]':
-          - 'Rgbank::Db'
-        'Node[loadbalancer.vm]':
-          - 'Rgbank::Load'
+      'Rgbank::Web':
+        - 'appserver01.vm'
+        - 'appserver02.vm'
+        - 'appserver03.vm'
+      'Rgbank::Db':
+        - 'database.vm'
+      'Rgbank::Load':
+        - 'loadbalancer.vm'
