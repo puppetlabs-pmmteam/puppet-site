@@ -19,8 +19,8 @@ production:
   rgbank:
     production-0:
       parameters:
-        username: 'productionuser'
-        password: 'myawesomepassword'
+        db_username: 'productionuser'
+        db_password: 'myawesomepassword'
       components:
         Rgbank::Web:
           - appserver01.vm
