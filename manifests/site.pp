@@ -57,11 +57,24 @@ site {
 
   $applications.each |String $type, Hash $instances| {
     $instances.each |String $title, Hash $params| {
+      $parsed_parameters = $params.make_application_parameters
+
+      #$components = $params['components'].make_component_titles($title).resolve_resources
+      #$params['components'].each |String $component, Array $nodes| {
+      #  $nodes.each |String $node| {
+      #    $comp_resource = "${component}[${node}]".to_resource
+      #  }
+      #}
+
+      #$parameters = $params['parameters']
+
+      #$params_merged = merge($components, $parameters)
+
       # Because Puppet code expects typed parameters, not just strings representing
       # types, an appropriately transformed version of the $params variable will be
       # used. The resolve_resources() method comes from the tse/to_resource module.
       Resource[$type] { $title:
-        * => $params.make_component_titles($title).resolve_resources,
+        * => $parsed_parameters
       }
     }
   }
