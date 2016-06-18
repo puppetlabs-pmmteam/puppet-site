@@ -63,7 +63,7 @@ site {
       # types, an appropriately transformed version of the $params variable will be
       # used. The resolve_resources() method comes from the tse/to_resource module.
       Resource[$type] { $title:
-        * => $parsed_parameters
+        * => $parsed_parameters.resolve_resources
       }
     }
   }
