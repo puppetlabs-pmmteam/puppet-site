@@ -12,7 +12,7 @@ forge "https://forgeapi.puppetlabs.com"
 
 # PL Modules
 mod 'puppetlabs/pe_upgrade'
-mod 'puppetlabs/java', '1.1.2'
+mod 'puppetlabs/java', '1.6.0'
 mod 'puppetlabs/git', '0.2.0'
 mod 'puppetlabs/dism', '1.1.0'
 mod 'puppetlabs/reboot', '0.1.8'
