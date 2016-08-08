@@ -34,15 +34,7 @@ production:
       components:
         Rgbank::Web:
           - appserver04.vm
-        Rgbank::Db:
-          - database.vm
-        Rgbank::Load:
-          - loadbalancer.vm
     production-phase-3:
       components:
         Rgbank::Web:
           - appserver05.vm
-        Rgbank::Db:
-          - database.vm
-        Rgbank::Load:
-          - loadbalancer.vm
