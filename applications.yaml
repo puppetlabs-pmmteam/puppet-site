@@ -28,7 +28,7 @@ production:
           - database.vm
         Rgbank::Infrastructure::Web:
           - master
-        Rgbank::Web
+        Rgbank::Web:
           - rgbank-web-1
     production-phase-1:
       components:
