@@ -6,3 +6,4 @@ mysql::server::remove_default_accounts: true
 mysql::server::override_options:
   'mysqld':
     'bind-address': '0.0.0.0'
+profile::vsphere::password: ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEwDQYJKoZIhvcNAQEBBQAEggEASLBZ46xsrKnc+CaDV5o5KZOl7vpmBtKJV8X2EqqHUgT8MuaxTmU1vrDts+2AKTGLHeg35A44ATabDqD3YEBDdji+dxLoyVQk2fP1K+xzdjyrRgV/nJ4hztkEZcqnbpjH94wwr6XLCNuS7bYVSSEze3zrqnjahBqfF12fLvcund35fzFNe0iFWVKFREqYcsaq9Q7vXAWB7LDnxRx9l7Y/a/GOBaZ5KzNEOGz7D5xuI+kioZmCrY4nxKW4C5UVaJc+9FCKq+jqSsP2JVh1nRlHN6TEBldqYaSHD4yHHMGvh1JKxk1diCFOCKdkICtwNkeo88vZP4xWIPI8QlwXejZw0zA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBBlrIvuVRJabNzyFK80yRQOgBA6gDdM4ID0Z/Y7wnEvjNMk]
