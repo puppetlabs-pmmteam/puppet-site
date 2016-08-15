@@ -1,5 +1,5 @@
 vcenter: {
-  host: "<%= host %>"
-  user: "<%= username %>"
-  password: "<%= password %>"
+  host: "<%= $host %>"
+  user: "<%= $username %>"
+  password: "<%= $password %>"
 }
