@@ -8,7 +8,7 @@ class profile::vsphere(
     content => epp('profile/vcenter.conf.epp', {'username' => $username, 'password' => $password, 'host' => $host }),
     owner   => 'pe-puppet',
     group   => 'pe-puppet',
-    mode    => 0644,
+    mode    => '0644',
   }
 
 }
