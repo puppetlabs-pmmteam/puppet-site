@@ -1,0 +1,5 @@
+vcenter: {
+  host: "<%= host %>"
+  user: "<%= username %>"
+  password: "<%= password %>"
+}

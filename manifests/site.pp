@@ -47,6 +47,11 @@ if $::osfamily == 'windows' {
 node default { }
 
 
+# Docker images
+node /^rgbank-web.*dockerbuilder/ {
+  include role::rgbank::web
+}
+
 # APPLICATIONS
 # Site application instances
 

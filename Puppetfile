@@ -35,6 +35,7 @@ mod 'puppetlabs/ciscopuppet', '1.0.0'
 # mod 'puppetlabs/satellite_pe_tools', '1.0.0'
 mod 'puppetlabs/haproxy', '1.5.0'
 mod 'tse/to_resource', '0.1.2'
+mod 'puppetlabs/vsphere'
 
 mod 'rgbank',
   :git => 'https://github.com/puppetlabs-pmmteam/puppet-rgbank.git'
