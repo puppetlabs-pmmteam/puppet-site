@@ -62,7 +62,7 @@ site {
 
   $applications.each |String $type, $instances| {
     $instances.each |String $title, $params| {
-      $parsed_parameters = $params.make_application_parameters
+      $parsed_parameters = $params.make_application_parameters($title)
 
       # Because Puppet code expects typed parameters, not just strings representing
       # types, an appropriately transformed version of the $params variable will be
