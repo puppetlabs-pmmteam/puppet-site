@@ -15,7 +15,11 @@ Puppet::Functions.create_function(:make_application_parameters) do
             nodes_hash[node_resource_format] = Array.new
           end
 
-          nodes_hash[node_resource_format] << "#{comp}[#{node_name}-#{instance_name}]"
+          if comp =~ /^.*\[.*\]$/
+            nodes_hash[node_resource_format] << comp
+          else
+            nodes_hash[node_resource_format] << "#{comp}[#{node_name}/#{instance_name}]"
+          end
         end
       end
     end
