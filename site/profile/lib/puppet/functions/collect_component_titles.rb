@@ -8,10 +8,10 @@
 Puppet::Functions.create_function(:collect_component_titles) do
   def collect_component_titles(nodes, component)
     target = component.type_name.downcase
-    nodes.map do |node, components|
+    nodes.map do |_, components|
       components = [components] unless components.kind_of?(Array)
       components = components.select {|comp| comp.type.downcase == target}
-      components.map {|comp| "#{comp.title}-#{node}"}
+      components.map {|comp| comp.title }
     end.flatten
   end
 end
