@@ -20,7 +20,7 @@ staging:
           - loadbalancer-staging.vm
 production:
   rgbank:
-    dynamic-allocation:
+    production-dynamic-allocation:
       parameters:
         dynamic_infrastructure: true
       components:
@@ -30,7 +30,7 @@ production:
           - master
         Rgbank::Web:
           - rgbank-web-1
-    production-phase-1:
+    production-static:
       components:
         Rgbank::Web:
           - appserver01.vm
@@ -40,11 +40,3 @@ production:
           - database.vm
         Rgbank::Load:
           - loadbalancer.vm
-    production-phase-2:
-      components:
-        Rgbank::Web:
-          - appserver04.vm
-    production-phase-3:
-      components:
-        Rgbank::Web:
-          - appserver05.vm
