@@ -2,7 +2,7 @@
 #
 # @return [Hash] Application instance parameters
 Puppet::Functions.create_function(:make_application_parameters) do
-  def make_application_parameters(parameters)
+  def make_application_parameters(parameters, instance_name)
     parameters['parameters'] = Hash.new unless parameters.has_key?('parameters')
     components = parameters['components']
     nodes_hash = Hash.new
@@ -15,7 +15,7 @@ Puppet::Functions.create_function(:make_application_parameters) do
             nodes_hash[node_resource_format] = Array.new
           end
 
-          nodes_hash[node_resource_format] << "#{comp}[#{node_name}]"
+          nodes_hash[node_resource_format] << "#{comp}[#{node_name}-#{instance_name}]"
         end
       end
     end
