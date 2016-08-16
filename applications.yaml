@@ -21,12 +21,10 @@ staging:
 production:
   rgbank:
     production-dynamic-allocation:
-      parameters:
-        dynamic_infrastructure: true
       components:
         Rgbank::Db:
           - database.vm
-        Rgbank::Infrastructure::Web:
+        Rgbank::Infrastructure::Web[rgbank-web-1]:
           - master
         Rgbank::Web:
           - rgbank-web-1
