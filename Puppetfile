@@ -36,7 +36,6 @@ mod 'puppetlabs/ciscopuppet', '1.0.0'
 mod 'puppetlabs/haproxy', '1.5.0'
 mod 'tse/to_resource', '0.1.2'
 mod 'puppetlabs/vsphere'
-mod 'puppetlabs/docker_platform'
 
 mod 'rgbank',
   :git => 'https://github.com/puppetlabs-pmmteam/puppet-rgbank.git'
@@ -65,3 +64,5 @@ mod 'jfryman/selinux', '0.4.0'
 mod 'nanliu/staging', '1.0.3'
 mod 'badgerious/windows_env', '2.2.2'
 mod 'chocolatey/chocolatey', '1.2.6'
+
+mod 'garethr/docker'
