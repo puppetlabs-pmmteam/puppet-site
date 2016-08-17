@@ -24,10 +24,12 @@ production:
       components:
         Rgbank::Db:
           - database.vm
-        Rgbank::Infrastructure::Web[rgbank-web-1]:
+        ['Rgbank::Infrastructure::Web[rgbank-web-1]','Rgbank::Infrastructure::Web[rgbank-web-2]','Rgbank::Infrastructure::Web[rgbank-web-3]']:
           - master
         Rgbank::Web:
           - rgbank-web-1
+          - rgbank-web-2
+          - rgbank-web-3
     production-static:
       components:
         Rgbank::Web:
