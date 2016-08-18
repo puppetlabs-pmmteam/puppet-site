@@ -21,10 +21,12 @@ staging:
 production:
   rgbank:
     docker:
+      parameters:
+        use_docker: true
       components:
         Rgbank::Db:
           - database.vm
-        Rgbank::Web::Docker:
+        Rgbank::Web:
           - rgbank-web-1
     production-dynamic-allocation:
       components:
