@@ -23,12 +23,17 @@ production:
     docker:
       parameters:
         use_docker: true
+        serve_port: 8080
       components:
         Rgbank::Db:
           - database.vm
         Rgbank::Web:
           - rgbank-web-1
+        Rgbank::Load:
+          - loadbalancer.vm
     production-dynamic-allocation:
+      parameters:
+        serve_port: 8060
       components:
         Rgbank::Db:
           - database.vm
@@ -38,7 +43,11 @@ production:
           - rgbank-web-1
           - rgbank-web-2
           - rgbank-web-3
+        Rgbank::Load:
+          - loadbalancer.vm
     production-static:
+      parameters:
+        serve_port: 80
       components:
         Rgbank::Web:
           - appserver01.vm
