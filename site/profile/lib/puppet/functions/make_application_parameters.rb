@@ -18,7 +18,7 @@ Puppet::Functions.create_function(:make_application_parameters) do
           if comp =~ /^.*\[.*\]$/
             nodes_hash[node_resource_format] << comp
           else
-            nodes_hash[node_resource_format] << "#{comp}[#{node_name}–#{instance_name}]"
+            nodes_hash[node_resource_format] << "#{comp}[#{node_name}_#{instance_name}]"
           end
         end
       end
