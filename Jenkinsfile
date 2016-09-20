@@ -10,13 +10,21 @@ def promote(Map parameters = [:]) {
 
   merge(from, to)
 
-  withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'github-ccaum-userpass', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
-    sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@' + repo + ' ' + to)
-  }
+  def build = manager.build
+  def workspace = build.getWorkspace()
+  def listener = manager.listener
+  def environment = build.getEnvironment(listener)
+
+  final def project = build.getProject()
+  final def gitScm = project.getScm()
+  final GitClient gitClient = gitScm.createClient(listener, environment, build, workspace);
+  final def remoteURI = new URIish("origin")
+
+  gitClient.push().tags(false).to(remoteURI).execute()
 }
 
 node {
-    git branch: 'dev', credentialsId: 'github-ccaum-userpass', url: 'https://github.com/puppetlabs-pmmteam/puppet-site'
+    git branch: 'dev', credentialsId: 'control-repo-github', url: 'git@github.com:puppetlabs-pmmteam/puppet-site'
 
     stage 'Lint and unit tests'
     withEnv(['PATH=/usr/local/bin:$PATH']) {

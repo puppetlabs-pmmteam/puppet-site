@@ -1,6 +1,6 @@
 class profile::jenkins {
-  
-  class { 'jenkins':
+
+  class { '::jenkins':
     configure_firewall => true,
   }
 
@@ -13,4 +13,14 @@ class profile::jenkins {
   jenkins::plugin { 'workflow-puppet-enterprise':
     source => 'http://int-resources.ops.puppetlabs.net/carl/workflow-puppet-enterprise.hpi',
   }
+
+  jenkins::plugin { 'copyartifact': }
+
+  file {'/var/www/html/builds':
+    ensure  => directory,
+    owner   => $::jenkins::user,
+    group   => $::jenkins::group,
+    require => Class['jenkins'],
+  }
+
 }
