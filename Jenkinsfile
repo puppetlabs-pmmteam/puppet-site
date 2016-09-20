@@ -10,13 +10,13 @@ def promote(Map parameters = [:]) {
 
   merge(from, to)
 
-  withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'github-ccaum-userpass', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
+  withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'github-generic-userpass', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
     sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@' + repo + ' ' + to)
   }
 }
 
 node {
-    git branch: 'dev', credentialsId: 'github-ccaum-userpass', url: 'https://github.com/puppetlabs-pmmteam/puppet-site'
+    git branch: 'dev', credentialsId: 'github-generic-userpass', url: 'https://github.com/puppetlabs-pmmteam/puppet-site'
 
     stage 'Lint and unit tests'
     withEnv(['PATH=/usr/local/bin:$PATH']) {
