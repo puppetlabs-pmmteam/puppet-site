@@ -10,17 +10,9 @@ def promote(Map parameters = [:]) {
 
   merge(from, to)
 
-  def build = manager.build
-  def workspace = build.getWorkspace()
-  def listener = manager.listener
-  def environment = build.getEnvironment(listener)
-
-  final def project = build.getProject()
-  final def gitScm = project.getScm()
-  final GitClient gitClient = gitScm.createClient(listener, environment, build, workspace);
-  final def remoteURI = new URIish("origin")
-
-  gitClient.push().tags(false).to(remoteURI).execute()
+  sshagent(['control-repo-github']) {
+    sh "git push origin " + to
+  }
 }
 
 node {
