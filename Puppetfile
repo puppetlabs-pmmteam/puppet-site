@@ -38,12 +38,11 @@ mod 'puppetlabs/haproxy', '1.5.0'
 mod 'tse/to_resource', '0.1.2'
 mod 'puppetlabs/vsphere'
 
+mod 'app_modeling',
+  :git => 'https://github.com/puppetlabs/puppetlabs-app_modeling'
+
 mod 'rgbank',
-  :git => 'https://github.com/puppetlabs-pmmteam/puppet-rgbank.git'
-mod 'database',
-  :git => 'https://github.com/puppetlabs-pmmteam/puppet-database.git'
-mod 'http',
-  :git => 'https://github.com/puppetlabs-pmmteam/puppet-http.git'
+  :git => 'https://github.com/puppetlabs/puppetlabs-rgbank.git'
 
 # Community Modules
 mod 'stahnma/epel', '1.0.0'
