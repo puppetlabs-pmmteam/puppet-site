@@ -38,7 +38,7 @@ node {
 
     stage 'Promote to staging'
     input "Ready to deploy to staging?"
-    promote from: 'dev', to: 'staging', repo: 'github.com/puppetlabs-pmmteam/puppet-site'
+    promote from: 'dev', to: 'staging'
     
     stage 'Deploy to staging'
     puppet.codeDeploy 'staging'
@@ -48,7 +48,7 @@ node {
     // Run acceptance tests here to make sure no applications are broken
 
     stage 'Promote to production'
-    promote from: 'staging', to: 'production', repo: 'github.com/puppetlabs-pmmteam/puppet-site'
+    promote from: 'staging', to: 'production'
     puppet.codeDeploy 'production'
 
     stage 'Noop production run'
