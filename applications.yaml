@@ -23,7 +23,6 @@ production:
     docker:
       parameters:
         use_docker: true
-        serve_port: 8080
       components:
         Rgbank::Db:
           - database.vm
@@ -32,8 +31,6 @@ production:
         Rgbank::Load:
           - loadbalancer.vm
     production-static:
-      parameters:
-        serve_port: 80
       components:
         Rgbank::Web:
           - appserver01.vm
