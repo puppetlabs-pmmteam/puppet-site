@@ -16,7 +16,7 @@ def promote(Map parameters = [:]) {
 }
 
 node {
-    git branch: 'dev', credentialsId: 'control-repo-github', url: 'git@github.com:puppetlabs-pmmteam/puppet-site'
+    git branch: 'dev', credentialsId: 'control-repo-github', url: 'git@github.com:puppetlabs/pmm-puppet-site'
 
     stage 'Lint and unit tests'
     withEnv(['PATH=/usr/local/bin:$PATH']) {
