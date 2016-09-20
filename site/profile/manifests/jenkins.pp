@@ -23,4 +23,10 @@ class profile::jenkins {
     require => Class['jenkins'],
   }
 
+  file {'/var/www/html/builds/rgbank':
+    ensure  => directory,
+    owner   => $::jenkins::user,
+    group   => $::jenkins::group,
+    require => Class['jenkins'],
+  }
 }
