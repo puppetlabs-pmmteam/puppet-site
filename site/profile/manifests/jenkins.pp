@@ -18,15 +18,15 @@ class profile::jenkins {
 
   file {'/var/www/html/builds':
     ensure  => directory,
-    owner   => $::jenkins::user,
-    group   => $::jenkins::group,
+    owner   => 'jenkins',
+    group   => 'jenkins',
     require => Class['jenkins'],
   }
 
   file {'/var/www/html/builds/rgbank':
     ensure  => directory,
-    owner   => $::jenkins::user,
-    group   => $::jenkins::group,
+    owner   => 'jenkins',
+    group   => 'jenkins',
     require => Class['jenkins'],
   }
 }
