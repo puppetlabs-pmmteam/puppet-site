@@ -27,7 +27,7 @@ production:
         Rgbank::Db:
           - database.vm
         Rgbank::Web:
-          - docker1.vm
+          - docker1
         Rgbank::Load:
           - loadbalancer.vm
     production-static:
