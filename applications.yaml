@@ -4,7 +4,7 @@ dev:
     dev-0:
       components:
         ['Rgbank::Web','Rgbank::Db', 'Rgbank::Load']:
-          - rgbankdev.vm
+          - rgbank-dev.vm
 staging:
   rgbank:
     staging-0:
