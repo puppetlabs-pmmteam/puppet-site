@@ -72,7 +72,7 @@ site {
   # Dynamic application declarations
   # from JSON
   $envs = loadyaml("/etc/puppetlabs/code/environments/${environment}/applications.yaml")
-  $applications = $envs[$environment]
+  $applications = pick_default($envs[$environment], {})
 
   $applications.each |String $type, $instances| {
     $instances.each |String $title, $params| {
