@@ -1,0 +1,16 @@
+---
+profile::windows::ad_dc::domain_name: 'internal.local'
+profile::windows::ad_dc::first_dc_dns: '192.168.0.11'
+# Should really use encryption or something else for these values
+profile::windows::ad_dc::domain_admin_username: 'INTERNAL\Administrator'
+profile::windows::ad_dc::domain_admin_password: 'Pupp3tlabs'
+profile::windows::ad_dc::safemode_admin_username: 'Administrator'
+profile::windows::ad_dc::safemode_admin_password: 'Puppet123'
+
+profile::windows::ad_dc_internal::applications_ou_name: 'Applications'
+
+domain_membership::domain: 'internal.local'
+domain_membership::username: 'svc-joindomain' # the '@xxx.yyy' is appended
+domain_membership::password: 'Puppet456'
+domain_membership::machine_ou: 'OU=Servers,DC=internal,DC=local'
+domain_membership::join_options: '3' # 1 (Join Domain) + 2 (Create Computer Object) 

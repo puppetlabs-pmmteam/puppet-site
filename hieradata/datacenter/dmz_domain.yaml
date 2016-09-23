@@ -1,0 +1,8 @@
+---
+profile::windows::ad_dc::domain_name: 'dmz.local'
+profile::windows::ad_dc::first_dc_dns: '192.168.50.50'
+# Should really use encryption or something else for these values
+profile::windows::ad_dc::domain_admin_username: 'DMZ\Administrator'
+profile::windows::ad_dc::domain_admin_password: 'Pupp3tlabs'
+profile::windows::ad_dc::safemode_admin_username: 'Administrator'
+profile::windows::ad_dc::safemode_admin_password: 'Puppet123'

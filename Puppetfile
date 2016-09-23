@@ -65,3 +65,6 @@ mod 'badgerious/windows_env', '2.2.2'
 mod 'chocolatey/chocolatey', '1.2.6'
 
 mod 'garethr/docker'
+
+mod 'windows_ad',
+  :git => 'https://github.com/glennsarti/glennsarti-windows_ad'
