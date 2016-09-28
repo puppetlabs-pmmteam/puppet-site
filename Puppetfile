@@ -65,3 +65,6 @@ mod 'badgerious/windows_env', '2.2.2'
 mod 'chocolatey/chocolatey', '1.2.6'
 
 mod 'garethr/docker'
+
+# CIS Modules
+mod 'perfecto25/cis_rhel7', '1.0.0'
