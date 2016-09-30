@@ -9,8 +9,7 @@ profile::windows::ad_dc::safemode_admin_password: 'Puppet123'
 
 profile::windows::ad_dc_internal::applications_ou_name: 'Applications'
 
-domain_membership::domain: 'internal.local'
-domain_membership::username: 'svc-joindomain' # the '@xxx.yyy' is appended
-domain_membership::password: 'Puppet456'
-domain_membership::machine_ou: 'OU=Servers,DC=internal,DC=local'
-domain_membership::join_options: '3' # 1 (Join Domain) + 2 (Create Computer Object) 
+profile::windows::join_domain::domain_name: 'internal.local'
+profile::windows::join_domain::domain_join_username: 'svc-joindomain@internal.local'
+profile::windows::join_domain::domain_join_password: 'Puppet456'
+profile::windows::join_domain::domain_join_ou: 'OU=Servers,DC=internal,DC=local'
