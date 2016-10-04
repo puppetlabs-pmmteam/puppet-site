@@ -20,16 +20,6 @@ staging:
           - loadbalancer-staging.vm
 production:
   rgbank:
-    docker:
-      parameters:
-        use_docker: true
-      components:
-        Rgbank::Db:
-          - database.vm
-        Rgbank::Web:
-          - docker1
-        Rgbank::Load:
-          - loadbalancer.vm
     production-static:
       components:
         Rgbank::Web:
