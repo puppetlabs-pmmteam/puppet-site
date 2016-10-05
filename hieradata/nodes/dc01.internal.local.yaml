@@ -1,0 +1,2 @@
+---
+profile::windows::ad_dc::is_first_dc: true
