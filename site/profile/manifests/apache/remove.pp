@@ -1,6 +1,10 @@
 class profile::apache::remove {
-  class { 'apache':
-    package_ensure => 'absent',
-    service_ensure => 'stopped',
+  package { 'apache':
+    ensure  => absent,
+    require => Package['php'],
+  }
+
+  package { 'php':
+    ensure => removed,
   }
 }
