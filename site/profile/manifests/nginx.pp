@@ -1,4 +1,6 @@
 class profile::nginx {
-  class { 'php': }
+  class { 'php': 
+    composer => false,
+  }
   class { 'nginx': }
 }
