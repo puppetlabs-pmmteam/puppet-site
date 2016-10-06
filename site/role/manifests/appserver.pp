@@ -4,4 +4,6 @@ class role::appserver {
   include profile::apache::remove
   include profile::mysql::client
   include profile::git
+
+  Class['profile::common'] -> Class['profile::nginx']
 }
