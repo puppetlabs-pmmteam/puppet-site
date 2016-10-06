@@ -5,6 +5,6 @@ class profile::apache::remove {
   }
 
   package { 'php':
-    ensure => removed,
+    ensure => absent,
   }
 }
