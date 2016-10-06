@@ -46,6 +46,7 @@ mod 'rgbank',
 
 # Community Modules
 mod 'stahnma/epel', '1.0.0'
+mod 'puppet/nginx', '0.4.0'
 mod 'opentable/iis', '1.2.0'
 mod 'opentable/windowsfeature', '1.0.0'
 mod 'seteam/tomcat', '0.1.0'
