@@ -1,4 +1,4 @@
-class profile::windows::baseline {
+class profile::baseline {
 
   class { 'chocolatey':
     notify => Reboot['afterchocolatey'],
@@ -8,7 +8,11 @@ class profile::windows::baseline {
     apply => immediately,
   }
 
-  # Need to upgrade Powershell to the latest to get DSC support
+  service { 'wuauserv':
+    ensure => running,
+    enable => true,
+  }
+
   package { 'powershell':
     ensure => latest,
     provider => 'chocolatey',
@@ -24,4 +28,11 @@ class profile::windows::baseline {
     dsc_timezone => 'Pacific Standard Time',
     dsc_issingleinstance => 'yes',
   }
+
+  exec { 'rename-admin':
+    command   => '$(Get-WMIObject Win32_UserAccount -Filter "Name=\'Administrator\'").Rename("PuppetAdmin")',
+    unless    => 'if (Get-WmiObject Win32_UserAccount -Filter "Name=\'Administrator\'") { exit 1 }',
+    provider  => powershell,
+  }
+
 }
