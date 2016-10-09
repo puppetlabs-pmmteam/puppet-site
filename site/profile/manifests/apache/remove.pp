@@ -1,7 +1,11 @@
 class profile::apache::remove {
-  package { 'apache':
+  package { 'httpd':
     ensure  => absent,
-    require => Package['php'],
+    require => [Package['php'], Service['httpd']],
+  }
+
+  service { 'httpd':
+    ensure => absent,
   }
 
   package { 'php':
