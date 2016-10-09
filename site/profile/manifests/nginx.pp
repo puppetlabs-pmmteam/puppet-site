@@ -3,4 +3,6 @@ class profile::nginx {
     composer => false,
   }
   class { 'nginx': }
+
+  Class['php'] -> Class['nginx']
 }
