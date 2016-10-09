@@ -5,6 +5,12 @@ dev:
       components:
         ['Rgbank::Web','Rgbank::Db', 'Rgbank::Load']:
           - rgbank-dev.vm
+rgbank_replace_apache_with_nginx:
+  rgbank:
+    dev-0:
+      components:
+        ['Rgbank::Web','Rgbank::Db', 'Rgbank::Load']:
+          - rgbank-dev.vm
 staging:
   rgbank:
     staging-0:

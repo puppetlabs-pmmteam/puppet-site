@@ -41,10 +41,12 @@ mod 'app_modeling',
   :git => 'https://github.com/puppetlabs/puppetlabs-app_modeling'
 
 mod 'rgbank',
-  :git => 'https://github.com/puppetlabs/puppetlabs-rgbank.git'
+  :git => 'https://github.com/puppetlabs/puppetlabs-rgbank.git',
+  :ref => '3deca839aeefe5547b287d5532094f368d36dce1'
 
 # Community Modules
 mod 'stahnma/epel', '1.0.0'
+mod 'puppet/nginx', '0.4.0'
 mod 'opentable/iis', '1.2.0'
 mod 'opentable/windowsfeature', '1.0.0'
 mod 'seteam/tomcat', '0.1.0'
