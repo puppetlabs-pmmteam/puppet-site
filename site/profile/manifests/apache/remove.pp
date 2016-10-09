@@ -5,7 +5,7 @@ class profile::apache::remove {
   }
 
   service { 'httpd':
-    ensure => absent,
+    ensure => stopped,
   }
 
   package { 'php':
