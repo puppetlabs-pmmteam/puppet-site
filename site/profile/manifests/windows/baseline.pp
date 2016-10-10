@@ -1,8 +1,6 @@
 class profile::baseline {
 
-  class { 'chocolatey':
-    notify => Reboot['afterchocolatey'],
-  }
+  class { 'chocolatey': }
 
   package { 'powershell':
     ensure => latest,
