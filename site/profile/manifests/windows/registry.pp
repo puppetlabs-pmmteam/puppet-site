@@ -22,7 +22,6 @@ class profile::windows::registry
   }
 
 # Disable Windows Firewall
-
   registry_value { 'HKLM\SYSTEM\CurrentControlSet\services\SharedAccess\Parameters\FirewallPolicy\DomainProfile\EnableFirewall':
     ensure => 'present',
     data   => ['0'],
@@ -41,17 +40,4 @@ class profile::windows::registry
     type   => 'dword',
   }
 
-
-B
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
 }
