@@ -8,11 +8,6 @@ class profile::baseline {
     apply => immediately,
   }
 
-  service { 'wuauserv':
-    ensure => running,
-    enable => true,
-  }
-
   package { 'powershell':
     ensure => latest,
     provider => 'chocolatey',
