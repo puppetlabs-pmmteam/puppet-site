@@ -4,10 +4,6 @@ class profile::baseline {
     notify => Reboot['afterchocolatey'],
   }
 
-  reboot { 'afterchocolatey':
-    apply => immediately,
-  }
-
   package { 'powershell':
     ensure => latest,
     provider => 'chocolatey',
