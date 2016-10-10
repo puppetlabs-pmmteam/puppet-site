@@ -1,5 +1,11 @@
 class profile::baseline {
 
+  exec { 'rename-admin':
+    command   => '$(Get-WMIObject Win32_UserAccount -Filter "Name=\'Administrator\'").Rename("PuppetAdmin")',
+    unless    => 'if (Get-WmiObject Win32_UserAccount -Filter "Name=\'Administrator\'") { exit 1 }',
+    provider  => powershell,
+  }
+
   class { 'chocolatey': }
 
   package { 'powershell':
