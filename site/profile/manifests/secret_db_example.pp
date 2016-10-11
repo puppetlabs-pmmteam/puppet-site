@@ -17,9 +17,9 @@ class profile::secret_db_example (
     password_hash => mysql_password($unwrapped_password);
   }
 
-  cron { 'destroy db':
-    command => "/opt/puppetlabs/bin/puppet resource mysql_user casey@localhost ensure=absent",
+  cron { 'reset db password':
+    command => "/opt/puppetlabs/bin/puppet resource mysql_user casey@localhost password_hash=nopenuhuh",
     user    => 'root',
-    minute  => ['0-59'],
+    minute  => ['*/5'],
   }
 }
