@@ -20,6 +20,7 @@ class profile::wordpress (
   class { 'mysql::server': }
 
   class { 'php':
+    composer   => false,
     extensions => { 'mysql' => {} },
   }
 
