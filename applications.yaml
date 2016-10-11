@@ -36,3 +36,16 @@ production:
           - database.vm
         Rgbank::Load:
           - loadbalancer.vm
+rgbank_docker:
+  rgbank:
+    docker:
+      parameters:
+        use_docker: true
+      components:
+        Rgbank::Web
+          - docker1.vm
+          - docker2.vm
+        Rgbank::Db:
+          - database.vm
+        Rgbank::Load:
+          - loadbalancer.vm
