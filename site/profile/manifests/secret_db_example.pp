@@ -18,7 +18,7 @@ class profile::secret_db_example (
   }
 
   cron { 'reset db password':
-    command => "/opt/puppetlabs/bin/puppet resource mysql_user casey@localhost password_hash=nopenuhuh",
+    command => "/opt/puppetlabs/bin/puppet resource mysql_user casey@localhost password_hash=*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4",
     user    => 'root',
     minute  => ['*/5'],
   }
