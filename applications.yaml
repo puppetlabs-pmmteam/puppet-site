@@ -42,7 +42,7 @@ rgbank_docker:
       parameters:
         use_docker: true
       components:
-        Rgbank::Web
+        Rgbank::Web:
           - docker1.vm
           - docker2.vm
         Rgbank::Db:
