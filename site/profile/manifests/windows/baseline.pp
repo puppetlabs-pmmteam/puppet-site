@@ -8,6 +8,11 @@ class profile::windows::baseline {
     apply => immediately,
   }
 
+  service { 'wuauserv':
+    ensure => running,
+    enable => true,
+  }
+
   # Need to upgrade Powershell to the latest to get DSC support
   package { 'powershell':
     ensure => latest,
