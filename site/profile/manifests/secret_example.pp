@@ -8,10 +8,4 @@ class profile::secret_example (
     mode    => '0600',
     content => $secret_content,
   }
-
-  cron { 'destroy secret file':
-    command => "rm -rf /root/.my_secret_file",
-    user    => 'root',
-    minute  => ['*/5'],
-  }
 }
