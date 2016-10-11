@@ -1,5 +1,5 @@
 class profile::wordpress (
-  Sensitive[String] $db_password = Sensitive(hiera("profile::wordpress::db_password")),
+  Sensitive[String] $db_password,
 ) {
 
   class { 'apache':
