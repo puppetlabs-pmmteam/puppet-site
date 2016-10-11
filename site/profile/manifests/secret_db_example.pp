@@ -1,10 +1,8 @@
 class profile::secret_db_example (
   Sensitive[String] $db_password,
-  Sensitive[String] $root_password,
 ) {
 
   class { 'mysql::server':
-    root_password           => $root_password,
     remove_default_accounts => true,
   }
 
