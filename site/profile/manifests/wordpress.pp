@@ -1,5 +1,5 @@
 class profile::wordpress (
-  Sensitive[String] $db_password,
+  String $db_password,
 ) {
 
   class { 'apache':
