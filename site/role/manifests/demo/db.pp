@@ -5,6 +5,5 @@ class role::demo::db {
 
   class { '::profile::secret_db_example':
     db_password   => Sensitive(hiera('secret_db_password')),
-    root_password => Sensitive(hiera('secret_root_password')),
   }
 }
