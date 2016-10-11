@@ -5,7 +5,7 @@ class profile::secret_example (
   file { '/root/.my_secret_file':
     owner   => root,
     group   => root,
-    mode    => 600,
+    mode    => '0600',
     content => $secret_content,
   }
 
