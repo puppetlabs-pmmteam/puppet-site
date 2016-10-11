@@ -1,7 +1,14 @@
-class profile::baseline {
+class profile::windows::baseline {
 
-  class { 'chocolatey': }
+  class { 'chocolatey':
+    notify => Reboot['afterchocolatey'],
+  }
 
+  reboot { 'afterchocolatey':
+    apply => immediately,
+  }
+
+  # Need to upgrade Powershell to the latest to get DSC support
   package { 'powershell':
     ensure => latest,
     provider => 'chocolatey',
@@ -17,5 +24,4 @@ class profile::baseline {
     dsc_timezone => 'Pacific Standard Time',
     dsc_issingleinstance => 'yes',
   }
-
 }

@@ -74,3 +74,11 @@ mod 'puppetlabs-mount_iso', '0.1.0'
 mod 'cyberious-pget', '1.1.0'
 mod 'trlinkin/domain_membership', '1.1.1'
 mod 'perfecto25/cis_rhel7', '1.0.0'
+
+# Puppetconf registry, wsus, powershell, chocolatey demo
+
+mod 'puppetlabs-wsus_client',
+  :git => 'https://github.com/sseebald/puppetlabs-wsus_client.git'
+mod 'puppetconf_wsus',
+  :git => 'https://github.com/sseebald/puppetconf_wsus.git'
+

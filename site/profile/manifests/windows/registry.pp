@@ -3,9 +3,9 @@ class profile::windows::registry
   String $ntpserver = "time.windows.com",
 )
 
-{
-
 #Puppet module for managing base Windows registry settings
+
+{
 
 # Disable UAC
   registry_value { 'HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA':
@@ -21,7 +21,7 @@ class profile::windows::registry
     type   => 'string',
   }
 
-# Disable Windows Firewall
+# Set Windows Firewall to Allow-All
   registry_value { 'HKLM\SYSTEM\CurrentControlSet\services\SharedAccess\Parameters\FirewallPolicy\DomainProfile\EnableFirewall':
     ensure => 'present',
     data   => ['0'],
