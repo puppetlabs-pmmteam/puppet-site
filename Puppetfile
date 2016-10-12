@@ -80,5 +80,4 @@ mod 'trlinkin/domain_membership', '1.1.1'
 
 #Security and compliance
 mod 'cis_rhel7',
-  :git => 'https://github.com/ccaum/perfecto25-cis_rhel7',
-  :ref => '435f73809f2dfc7c0629419665d9407c42e7cc45'
+  :git => 'https://github.com/ccaum/perfecto25-cis_rhel7'
