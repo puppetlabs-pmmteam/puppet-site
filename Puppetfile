@@ -67,6 +67,10 @@ mod 'chocolatey/chocolatey', '1.2.6'
 mod 'reidmv-unzip', '0.1.2'
 mod 'garethr/docker'
 
+#Augeas providers
+mod 'herculesteam/augeasproviders_pam'
+mod 'herculesteam/augeasproviders_core'
+
 mod 'windows_ad',
   :git => 'https://github.com/glennsarti/glennsarti-windows_ad'
 mod 'puppetlabs-sqlserver', '1.1.4'
