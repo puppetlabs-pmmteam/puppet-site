@@ -67,17 +67,10 @@ mod 'chocolatey/chocolatey', '1.2.6'
 mod 'reidmv-unzip', '0.1.2'
 mod 'garethr/docker'
 
-#Augeas providers
-mod 'herculesteam/augeasproviders_pam'
-mod 'herculesteam/augeasproviders_core'
-
 mod 'windows_ad',
   :git => 'https://github.com/glennsarti/glennsarti-windows_ad'
 mod 'puppetlabs-sqlserver', '1.1.4'
 mod 'puppetlabs-mount_iso', '0.1.0'
 mod 'cyberious-pget', '1.1.0'
 mod 'trlinkin/domain_membership', '1.1.1'
-
-#Security and compliance
-mod 'cis_rhel7',
-  :git => 'https://github.com/ccaum/perfecto25-cis_rhel7'
+mod 'perfecto25/cis_rhel7', '1.0.0'
