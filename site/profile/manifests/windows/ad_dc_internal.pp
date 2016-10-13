@@ -22,11 +22,25 @@ class profile::windows::ad_dc_internal(
       site_name =>  'SanDiego',
     }
 
+    windows_ad::site { 'Charlotte':
+      description => 'Charlotte AD Site',
+    } ->
+    windows_ad::subnet { '192.168.60.0/24':
+      location  => 'US/NC/Charlotte',
+      site_name =>  'Charlotte',
+    }
+
     # Setup AD Site Links
     windows_ad::sitelink { 'Portland-SanDiego':
       sites => 'Portland,SanDiego',
       cost => 50,
       require => [Windows_ad::Site['SanDiego'],Windows_ad::Site['Portland']],
+    }
+
+    windows_ad::sitelink { 'Portland-Charlotte':
+      sites => 'Portland,Charlotte',
+      cost => 50,
+      require => [Windows_ad::Site['Charlotte'],Windows_ad::Site['Portland']],
     }
 
     # Delete default topology
