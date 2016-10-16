@@ -1,5 +1,5 @@
 class role::appserver(
-  $use_puppetconf_header = true
+  $use_puppetconf_header = false
 ) {
   include profile::common
   include profile::apache::remove
