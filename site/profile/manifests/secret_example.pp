@@ -1,5 +1,5 @@
 class profile::secret_example (
-  Sensitive[String] $secret_content,
+  Sensitive[String] $secret_content = 'super secret',
 ) {
 
   file { '/root/.my_secret_file':
