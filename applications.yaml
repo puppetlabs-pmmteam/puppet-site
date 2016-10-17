@@ -5,7 +5,7 @@ dev:
       components:
         ['Rgbank::Web','Rgbank::Db', 'Rgbank::Load']:
           - rgbank-dev.vm
-rgbank_replace_apache_with_nginx:
+puppetconf_header:
   rgbank:
     dev-0:
       components:

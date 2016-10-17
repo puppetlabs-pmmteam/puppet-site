@@ -42,7 +42,7 @@ mod 'app_modeling',
 
 mod 'rgbank',
   :git => 'https://github.com/puppetlabs/puppetlabs-rgbank.git',
-  :ref => '40274daefbed9e69dfca8178868905b86a4ba44c'
+  :ref => '2ddaa2bb973028c069e20a278e47e10a467bfad0'
 
 # Community Modules
 mod 'stahnma/epel', '1.0.0'

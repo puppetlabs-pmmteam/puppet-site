@@ -1,4 +1,6 @@
-class profile::wordpress {
+class profile::wordpress (
+  String $db_password,
+) {
 
   class { 'apache':
     default_vhost => true,
@@ -7,7 +9,8 @@ class profile::wordpress {
   class { 'apache::mod::php': }
 
   class { 'wordpress':
-    require => [
+    db_password => $db_password,
+    require  => [
       Class['mysql::server'],
       Class['apache'],
       Class['apache::mod::php'],
@@ -17,6 +20,7 @@ class profile::wordpress {
   class { 'mysql::server': }
 
   class { 'php':
+    composer   => false,
     extensions => { 'mysql' => {} },
   }
 
