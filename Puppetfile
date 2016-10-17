@@ -36,7 +36,6 @@ mod 'puppetlabs/ciscopuppet', '1.0.0'
 mod 'puppetlabs/haproxy', '1.5.0'
 mod 'tse/to_resource', '0.1.2'
 mod 'puppetlabs/vsphere'
-mod 'puppetlabs/chocolatey'
 
 mod 'app_modeling',
   :git => 'https://github.com/puppetlabs/puppetlabs-app_modeling'
@@ -64,9 +63,9 @@ mod 'camptocamp/archive', '0.8.1'
 mod 'jfryman/selinux', '0.4.0'
 mod 'nanliu/staging', '1.0.3'
 mod 'badgerious/windows_env', '2.2.2'
+mod 'chocolatey/chocolatey', '1.2.6'
 mod 'reidmv-unzip', '0.1.2'
 mod 'garethr/docker'
-mod 'chocolatey/chocolatey_server'
 
 mod 'windows_ad',
   :git => 'https://github.com/glennsarti/glennsarti-windows_ad'
