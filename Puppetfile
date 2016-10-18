@@ -23,7 +23,7 @@ mod 'puppetlabs/apache', '1.6.0'
 mod 'puppetlabs/pe_gem', '0.0.1'
 mod 'puppetlabs/vcsrepo', '1.2.0'
 mod 'puppetlabs/stdlib', '4.12.0'
-mod 'puppetlabs/powershell', '2.0.2'
+mod 'puppetlabs/powershell', '2.0.3'
 mod 'puppetlabs/ntp', '3.2.1'
 mod 'puppetlabs/concat', '2.1.0'
 mod 'puppetlabs/firewall', '1.7.1'
@@ -36,20 +36,21 @@ mod 'puppetlabs/ciscopuppet', '1.0.0'
 mod 'puppetlabs/haproxy', '1.5.0'
 mod 'tse/to_resource', '0.1.2'
 mod 'puppetlabs/vsphere'
+mod 'puppetlabs/chocolatey', '2.0.0'
+
+mod 'app_modeling',
+  :git => 'https://github.com/puppetlabs/puppetlabs-app_modeling'
 
 mod 'rgbank',
-  :git => 'https://github.com/puppetlabs-pmmteam/puppet-rgbank.git'
-mod 'database',
-  :git => 'https://github.com/puppetlabs-pmmteam/puppet-database.git'
-mod 'http',
-  :git => 'https://github.com/puppetlabs-pmmteam/puppet-http.git'
+  :git => 'https://github.com/puppetlabs/puppetlabs-rgbank.git',
+  :ref => '2ddaa2bb973028c069e20a278e47e10a467bfad0'
 
 # Community Modules
 mod 'stahnma/epel', '1.0.0'
-mod 'opentable/iis', '1.2.0'
-mod 'opentable/windowsfeature', '1.0.0'
+mod 'puppet/nginx', '0.4.0'
+mod 'puppet/iis', '2.0.2'
+mod 'puppet/windowsfeature', '2.0.0'
 mod 'seteam/tomcat', '0.1.0'
-mod 'nanliu/staging', '1.0.2'
 mod 'elasticsearch/elasticsearch', '0.3.2'
 mod 'cprice404/grafanadash', '0.0.5'
 mod 'dwerder/graphite', '5.3.3'
@@ -63,6 +64,20 @@ mod 'camptocamp/archive', '0.8.1'
 mod 'jfryman/selinux', '0.4.0'
 mod 'nanliu/staging', '1.0.3'
 mod 'badgerious/windows_env', '2.2.2'
-mod 'chocolatey/chocolatey', '1.2.6'
-
+# mod 'chocolatey/chocolatey', '1.2.6'
+mod 'reidmv-unzip', '0.1.2'
 mod 'garethr/docker'
+
+mod 'windows_ad',
+  :git => 'https://github.com/glennsarti/glennsarti-windows_ad'
+mod 'puppetlabs-sqlserver', '1.1.4'
+mod 'puppetlabs-mount_iso', '0.1.0'
+mod 'cyberious-pget', '1.1.0'
+mod 'trlinkin/domain_membership', '1.1.1'
+
+# Puppetconf registry, wsus, powershell, chocolatey demo
+
+mod 'puppetlabs-wsus_client',
+  :git => 'https://github.com/sseebald/puppetlabs-wsus_client.git'
+mod 'puppetconf_wsus',
+  :git => 'https://github.com/sseebald/puppetconf_wsus.git'

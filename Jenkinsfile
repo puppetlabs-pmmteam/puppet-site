@@ -6,17 +6,16 @@ def merge(from, to) {
 def promote(Map parameters = [:]) {
   String from = parameters.from
   String to = parameters.to
-  String repo = parameters.repo
 
   merge(from, to)
 
-  withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'github-generic-userpass', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
-    sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@' + repo + ' ' + to)
+  sshagent(['control-repo-github']) {
+    sh "git push origin " + to
   }
 }
 
 node {
-    git branch: 'dev', credentialsId: 'github-generic-userpass', url: 'https://github.com/puppetlabs-pmmteam/puppet-site'
+    git branch: 'dev', credentialsId: 'control-repo-github', url: 'git@github.com:puppetlabs/pmm-puppet-site'
 
     stage 'Lint and unit tests'
     withEnv(['PATH=/usr/local/bin:$PATH']) {
@@ -38,7 +37,7 @@ node {
 
     stage 'Promote to staging'
     input "Ready to deploy to staging?"
-    promote from: 'dev', to: 'staging', repo: 'github.com/puppetlabs-pmmteam/puppet-site'
+    promote from: 'dev', to: 'staging'
     
     stage 'Deploy to staging'
     puppet.codeDeploy 'staging'
@@ -48,7 +47,7 @@ node {
     // Run acceptance tests here to make sure no applications are broken
 
     stage 'Promote to production'
-    promote from: 'staging', to: 'production', repo: 'github.com/puppetlabs-pmmteam/puppet-site'
+    promote from: 'staging', to: 'production'
     puppet.codeDeploy 'production'
 
     stage 'Noop production run'

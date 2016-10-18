@@ -1,0 +1,4 @@
+---
+profile::iis::cloudshop::dbserver : 'sql04.internal.local'
+profile::iis::cloudshop::dbuser : 'cloudshop_login'
+profile::iis::cloudshop::dbpassword : 'puppetCloud123'

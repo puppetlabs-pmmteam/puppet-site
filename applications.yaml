@@ -4,7 +4,13 @@ dev:
     dev-0:
       components:
         ['Rgbank::Web','Rgbank::Db', 'Rgbank::Load']:
-          - rgbankdev.vm
+          - rgbank-dev.vm
+puppetconf_header:
+  rgbank:
+    dev-0:
+      components:
+        ['Rgbank::Web','Rgbank::Db', 'Rgbank::Load']:
+          - rgbank-dev.vm
 staging:
   rgbank:
     staging-0:
@@ -20,34 +26,7 @@ staging:
           - loadbalancer-staging.vm
 production:
   rgbank:
-    docker:
-      parameters:
-        use_docker: true
-        serve_port: 8080
-      components:
-        Rgbank::Db:
-          - database.vm
-        Rgbank::Web:
-          - rgbank-web-1
-        Rgbank::Load:
-          - loadbalancer.vm
-    production-dynamic-allocation:
-      parameters:
-        serve_port: 8060
-      components:
-        Rgbank::Db:
-          - database.vm
-        ['Rgbank::Infrastructure::Web[rgbank-web-1]','Rgbank::Infrastructure::Web[rgbank-web-2]','Rgbank::Infrastructure::Web[rgbank-web-3]']:
-          - master
-        Rgbank::Web:
-          - rgbank-web-1
-          - rgbank-web-2
-          - rgbank-web-3
-        Rgbank::Load:
-          - loadbalancer.vm
     production-static:
-      parameters:
-        serve_port: 80
       components:
         Rgbank::Web:
           - appserver01.vm

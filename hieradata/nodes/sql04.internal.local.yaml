@@ -1,0 +1,6 @@
+---
+profile::mssql::baseline::iso_download_url : 'http://int-resources.ops.puppetlabs.net/QA_resources/microsoft_sql/iso/SQLServer2012SP1-FullSlipstream-ENU-x64.iso'
+profile::mssql::baseline::iso_name : 'SQLServer2012SP1-FullSlipstream-ENU-x64.iso'
+profile::mssql::baseline::sqlserver_version : '2012'
+profile::mssql::baseline::sa_password : 'P@ssword123'
+profile::mssql::baseline::db_admin_group : 'INTERNAL\dbadministrators'
